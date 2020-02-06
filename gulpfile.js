@@ -50,7 +50,7 @@ const paths = {
   pug: {
     src: "./src/pages/*.pug",
     dist: "./dist/",
-    watch: "./src/pages/*.pug"
+    watch: ["./src/pages/*.pug", "./src/pageTemplates/*.pug"]
   },
   fonts: {
     src: "./src/fonts/**/*.{ttf,otf,woff,woff2}",

@@ -30,6 +30,9 @@ $spritesheet-sprites: false;
 
 a {
   color: inherit;
+  &:hover {
+    color: inherit;
+  }
 }
 
 .PageWrapper {
@@ -42,5 +45,5 @@ a {
 }
 
 header {
-  background-color: #000;
+  background-color: rgb(51, 48, 55);
 }
