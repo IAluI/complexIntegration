@@ -28,6 +28,10 @@ $spritesheet-sprites: false;
   @include sprites($spritesheet-sprites);
 }
 
+a {
+  color: inherit;
+}
+
 .PageWrapper {
   height: 100vh;
   display: flex;
@@ -35,4 +39,8 @@ $spritesheet-sprites: false;
   main {
     flex: 1 0 auto;
   }
+}
+
+header {
+  background-color: #000;
 }
