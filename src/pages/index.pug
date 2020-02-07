@@ -9,6 +9,27 @@ block variables
 block additionStyle
 
 block content
-  h1 Hello world!
+  section
+    div.container
+      div.row
+        div.py-4.col-12.order-1.col-md-5.order-md-0
+          h2.mb-4 Комплексный подход к любой задаче
+          a(href='https://2gis.ru/barnaul/firm/70000001036842942').d-flex.align-items-center.mb-3
+            +icon('location', 'red').flex-shrink-0.mr-1
+            span 656043, г. Барнаул,ул. Короленко 113, офис 8      
+          a(href='tel:+73852570176').d-flex.align-items-center.mb-3
+            +icon('tel', 'red').flex-shrink-0.mr-1
+            span +7 (3852) 57&ndash;01&ndash;76
+          a(href="mailto:info@cisenergy.ru").d-flex.align-items-center.mb-3
+            +icon('mail', 'red').flex-shrink-0.mr-1
+            span info@cisenergy.ru
+        div.col-12.order-0.col-md-7.order-md-1.position-relative.overflow-hidden
+          img(src='/img/approach.jpg', alt='').Approach-Img
+  section.text-white.Services
+    div.container
+      h2.text-center МЫ ПРЕДЛАГАЕМ СЛЕДУЮЩИЕ УСЛУГИ
+      div.d-flex.flex-wrap
+        div
+
 
 block additionScript

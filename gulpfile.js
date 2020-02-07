@@ -87,8 +87,8 @@ gulp.task('clean', (cb) => {
   if (!fs.existsSync(path.resolve(__dirname, 'tmp'))) {
     fs.mkdirSync(path.resolve(__dirname, 'tmp'));
   }
-  fs.closeSync(fs.openSync(path.resolve(__dirname, 'tmp/icons.scss'), 'w'));
-  fs.closeSync(fs.openSync(path.resolve(__dirname, 'tmp/sprite.scss'), 'w'));
+  fs.closeSync(fs.openSync(path.resolve(__dirname, 'tmp/_icons.scss'), 'w'));
+  fs.closeSync(fs.openSync(path.resolve(__dirname, 'tmp/_sprite.scss'), 'w'));
   cb();
 });
 

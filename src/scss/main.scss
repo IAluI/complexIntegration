@@ -27,6 +27,32 @@ $spritesheet-sprites: false;
   }
   @include sprites($spritesheet-sprites);
 }
+/*
+  Адаптивный размер шрифта html
+*/
+@function calc-font-size($f-min, $f-max, $v-min, $v-max) {
+  $k: ($f-max - $f-min)/($v-max - $v-min);
+  $b: $f-min - $k * $v-min;
+
+  $b: $b * 1px;
+
+  @return calc( #{$k} * 100vw + #{$b} );
+}
+
+@mixin responsive-font-size($f-min, $f-max, $v-min, $v-max) {
+  font-size: $f-min * 1px;
+  @media (min-width: $v-min * 1px) {
+    font-size: calc-font-size($f-min, $f-max, $v-min, $v-max);
+  }
+  @media (min-width: $v-max * 1px) {
+    font-size: $f-max * 1px;
+  }
+}
+
+html {
+  min-width: 320px;
+  @include responsive-font-size(14, 20, 320, 1200);
+}
 
 a {
   color: inherit;
@@ -34,6 +60,9 @@ a {
     color: inherit;
   }
 }
+
+$headerColor: rgb(51, 48, 55);
+$sectionColor: rgb(87, 89, 95);
 
 .PageWrapper {
   height: 100vh;
@@ -44,6 +73,25 @@ a {
   }
 }
 
-header {
-  background-color: rgb(51, 48, 55);
+.Header {
+  background-color: $headerColor;
+}
+
+.Header-Logo {
+  width: 3rem;
+  height: 3rem;
+}
+
+.Approach-Img {
+  width: 100%;
+  @media (min-width: map-get($grid-breakpoints, md)) {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.Services {
+  background-color: $sectionColor;
 }

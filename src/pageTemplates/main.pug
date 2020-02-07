@@ -17,15 +17,23 @@ html(lang='ru')
     title= title
   body
     div.PageWrapper
-      header
+      header.text-white.py-2.Header
         div.container
-          div.d-flex.justify-content-between.align-items-center.text-white
-            img(alt='Комплексная Интеграция', title='Комплексная Интеграция', src='/img/mainLogo.png')
-            h1.h4 КОМПЛЕКСНАЯ ИНТЕГРАЦИЯ
-            a(href='#about') О компании
-            a(href='#contacts') Контакты
-            a(href='#services') Услуги
-            a(href="tel:+73852570176") +7 (3852) 57-01-76
+          div.d-flex.justify-content-between.align-items-center
+            div.d-flex.align-items-center
+              img(alt='Комплексная Интеграция', title='Комплексная Интеграция', src='/img/mainLogo.png').mr-1.Header-Logo
+              h1.m-0.h4
+                | КОМПЛЕКСНАЯ ИНТЕГРАЦИЯ
+            a(href='#about').d-none.d-xl-block
+              | О компании
+            a(href='#contacts').d-none.d-xl-block
+              | Контакты
+            a(href='#services').d-none.d-xl-block
+              | Услуги
+            a(href="tel:+73852570176").d-flex.align-items-center
+              +icon('tel').flex-shrink-0.mr-1
+              span.d-none.d-md-block
+                | +7 (3852) 57&ndash;01&ndash;76
       main
         block content
       footer
