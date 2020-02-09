@@ -9,11 +9,30 @@ block variables
 block additionStyle
 
 block content
+  div(id='modalForm', tabindex='-1').modal.fade
+    div.modal-dialog
+      form.modal-content
+        div.modal-header
+          button(type='button', data-dismiss='modal').close
+            | &times;
+        div.modal-body
+          div.form-group
+            label(for='modalForm_name') Имя:
+            input(type='text', name='name', autocomplete='off', id='modalForm_name').form-control
+          div.form-group
+            label(for='modalForm_mail') Электронная почта:
+            input(type='text', name='mail', autocomplete='off', id='modalForm_mail').form-control
+          div.form-group
+            label(for='modalForm_mess') Сообщение:
+            textarea(rows='3', name='message', autocomplete='off', id='modalForm_mess').form-control
+        div.modal-footer
+          button(type='submit').btn.btn-primary
+            | Отправить
   section
     div.container
       div.row
-        div.py-4.col-12.order-1.col-md-5.order-md-0
-          h2.mb-4 Комплексный подход к любой задаче
+        div.col-12.order-1.col-md-5.order-md-0.py-4
+          h2 Комплексный подход к любой задаче
           a(href='https://2gis.ru/barnaul/firm/70000001036842942').d-flex.align-items-center.mb-3
             +icon('location', 'red').flex-shrink-0.mr-1
             span 656043, г. Барнаул,ул. Короленко 113, офис 8      
@@ -26,10 +45,179 @@ block content
         div.col-12.order-0.col-md-7.order-md-1.position-relative.overflow-hidden
           img(src='/img/approach.jpg', alt='').Approach-Img
   section.text-white.Services
+    div.container.py-4
+      h2.text-center Мы предлагаем следующие услуги
+      div.row
+        div.col-12.col-md-6.col-xl-4.Services-Item
+          div.Services-ItemImg
+            img(src='/img/servives_design.jpg', alt='Проектирование').w-100
+          p.Services-ItemText
+            | Проектирование силовых щитов и щитов управления
+        div.col-12.col-md-6.col-xl-4.Services-Item
+          div.Services-ItemImg
+            img(src='/img/servives_production.jpg', alt='Производство').w-100
+          p.Services-ItemText
+            | Производство щитового оборудования
+        div.col-12.col-md-6.col-xl-4.Services-Item
+          div.Services-ItemImg
+            img(src='/img/servives_repair.jpg', alt='Диагностика').w-100
+          p.Services-ItemText
+            | Диагностика и ремонт промышленной электроники
+        div.col-12.col-md-6.col-xl-4.Services-Item
+          div.Services-ItemImg
+            img(src='/img/servives_automation.jpg', alt='Автоматизация').w-100
+          p.Services-ItemText
+            | Автоматизация технологических процессов
+        div.col-12.col-md-6.col-xl-4.Services-Item
+          div.Services-ItemImg
+            img(src='/img/servives_installation.jpg', alt='Монтаж').w-100
+          p.Services-ItemText
+            | Монтаж и шеф-монтаж
+        div.col-12.col-md-6.col-xl-4.Services-Item
+          div.Services-ItemImg
+            img(src='/img/servives_commissioning.jpg', alt='Пусконаладочные работы').w-100
+          p.Services-ItemText
+            | Пусконаладочные работы
+      button(data-toggle='modal', data-target='#modalForm').btn.btn-primary.font-weight-bold.d-block.mx-auto
+        | Оставить заявку на ремонт
+        br
+        | промышленной электроники
+  section
+    div.container.py-4.text-center
+      h2 Преимущества работы с нами
+      div.row
+        div.col-12.col-sm-6.col-lg-3
+          +icon('share', 'red').Advantages-Icon
+          p
+            | Комплексный подход к решению задач автоматизации технологических процессов
+        div.col-12.col-sm-6.col-lg-3
+          +icon('good', 'red').Advantages-Icon
+          p
+            | Опыт внедрений и индивидуальный подход к заказчику
+        div.col-12.col-sm-6.col-lg-3
+          +icon('mechanic_1', 'red').Advantages-Icon
+          p
+            | Использование комплектующих только проверенных надежных брендов
+        div.col-12.col-sm-6.col-lg-3
+          +icon('time', 'red').Advantages-Icon
+          p
+            | Произведем расчет или сделаем смету за 48 часов
+  section.text-white.Projects
+    div.container.py-4
+      h2.text-center Реализованные проекты
+
+  section
+    div.container.py-4
+      h2.text-center Наша компетенция
+      div.d-flex.flex-wrap.justify-content-between
+        div.Competence-Item
+          div.Competence-ItemImg
+            +icon('mechanic_2')
+          | Автоматизация производственных процессов
+        div.Competence-Item
+          div.Competence-ItemImg
+            +icon('lifebuoy')
+          | Поставка промышленного КИПиА
+        div.Competence-Item
+          div.Competence-ItemImg
+            +icon('tool_1')
+          | Ремонт частотных преобразователей и УПП
+        div.Competence-Item
+          div.Competence-ItemImg
+            +icon('tool_2')
+          | Ремонт электроники АСУ на  производствах
+        div.Competence-Item
+          div.Competence-ItemImg
+            +icon('plug')
+          | Промышленные компьютеры и роботы
+        div.Competence-Item
+          div.Competence-ItemImg
+            +icon('cycle')
+          | Обслуживание производственного оборудования
+        div.Competence-Item
+          div.Competence-ItemImg
+            +icon('mechanic_3')
+          | Автоматизация кранового оборудования
+        div.Competence-Item
+          div.Competence-ItemImg
+            +icon('document')
+          | Восстановление оборудования, технический аудит
+  section.text-white.Brands
+    div.container.py-4
+      h2.text-center Мы поставляем КИПиА ведущих мировых брендов
+      div.d-flex.flex-wrap.justify-content-around
+        a(target="_blank", href='https://www.se.com/ru/ru/').Brands-Item
+          img(src='/img/brand_schneider.jpg', alt='Schneider Electric').w-100
+        a(target="_blank", href='https://omron.ru/ru/home').Brands-Item
+          img(src='/img/brand_omron.jpg', alt='Omron').w-100
+        a(target="_blank", href='https://www.phoenixcontact.com/online/portal/ru').Brands-Item
+          img(src='/img/brand_phoenix.jpg', alt='Phoenix Contact').w-100
+        a(target="_blank", href='https://www.idec.com/').Brands-Item
+          img(src='/img/brand_idec.jpg', alt='Idec').w-100
+        a(target="_blank", href='https://www.ifm.com/ru/ru').Brands-Item
+          img(src='/img/brand_ifm.jpg', alt='ifm').w-100
+        a(target="_blank", href='https://www.lenze.com/en-us/').Brands-Item
+          img(src='/img/brand_lenze.jpg', alt='Lenze').w-100
+        a(target="_blank", href='https://leuze-electronicc.ru/').Brands-Item
+          img(src='/img/brand_leuze.jpg', alt='Leuze Electronic').w-100
+        a(target="_blank", href='https://www.lutze.com/').Brands-Item
+          img(src='/img/brand_lutze.jpg', alt='Lutze').w-100
+        a(target="_blank", href='https://www.murrelektronik.com/').Brands-Item
+          img(src='/img/brand_murr.jpg', alt='Murr Elektronik').w-100
+        a(target="_blank", href='https://www.pepperl-fuchs.com/russia/ru/').Brands-Item
+          img(src='/img/brand_pepperl.jpg', alt='Pepperl Fuchs').w-100
+        a(target="_blank", href='https://www.sew-eurodrive.ru/glavnaya.html').Brands-Item
+          img(src='/img/brand_sewEurodrive.jpg', alt='Sew Eurodrive').w-100
+        a(target="_blank", href='https://www.sick.com/ru/ru').Brands-Item
+          img(src='/img/brand_sick.jpg', alt='Sick').w-100
+        a(target="_blank", href='https://new.siemens.com/ru/ru.html').Brands-Item
+          img(src='/img/brand_siemens.jpg', alt='Siemens').w-100
+        a(target="_blank", href='https://www.telcosensors.com/').Brands-Item
+          img(src='/img/brand_telco.jpg', alt='Telco Sensors').w-100
+        a(target="_blank", href='https://trelectronic.com/').Brands-Item
+          img(src='/img/brand_trElectronic.jpg', alt='TR Electronic').w-100
+        a(target="_blank", href='https://www.yaskawa.eu.com/ru/').Brands-Item
+          img(src='/img/brand_yaskawa.jpg', alt='Yaskawa').w-100
+  section
     div.container
-      h2.text-center МЫ ПРЕДЛАГАЕМ СЛЕДУЮЩИЕ УСЛУГИ
-      div.d-flex.flex-wrap
-        div
+      div.row
+        div.col-12.col-lg-5.py-4
+          a(href='https://2gis.ru/barnaul/firm/70000001036842942').d-flex.align-items-center.mb-3
+            +icon('location', 'red').flex-shrink-0.mr-1
+            span 656043, г. Барнаул,ул. Короленко 113, офис 8
+          a(href='tel:+73852570176').d-flex.align-items-center.mb-3
+            +icon('tel', 'red').flex-shrink-0.mr-1
+            span +7 (3852) 57&ndash;01&ndash;76
+          a(href="mailto:info@cisenergy.ru").d-flex.align-items-center.mb-3
+            +icon('mail', 'red').flex-shrink-0.mr-1
+            span info@cisenergy.ru
+          h2 Обратная связь
+          form.mb-3
+            div.form-group
+              label(for='feedback_name') Имя:
+              input(type='text', name='name', autocomplete='off', id='feedback_name').form-control
+            div.form-group
+              label(for='feedback_mail') Электронная почта:
+              input(type='text', name='mail', autocomplete='off', id='feedback_mail').form-control
+            div.form-group
+              label(for='feedback_mess') Сообщение:
+              textarea(rows='3', name='message', autocomplete='off', id='feedback_mess').form-control
+            button(type='submit').btn.btn-primary
+              | Отправить
+          span.Contacts-Copyright ООО "Комплексная Интеграция". Все права защищены.
+        div.d-none.d-lg-block.col-lg-7
+          a(class="dg-widget-link", href="http://2gis.ru/barnaul/firm/70000001036842942/center/83.778046,53.329704/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap")
+            | Посмотреть на карте Барнаула
+          div.dg-widget-link
+            a(href="http://2gis.ru/barnaul/center/83.778046,53.329704/zoom/16/routeTab/rsType/bus/to/83.778046,53.329704╎Комплексная интеграция?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route")
+              | Найти проезд до Комплексная интеграция
+          script(charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js")
+          script(charset="utf-8")
+            | new DGWidgetLoader({"width":"100%","height":"100%","borderColor":"#a3a3a3","pos":{"lat":53.329704,"lon":83.778046,"zoom":16},"opt":{"city":"barnaul"},"org":[{"id":"70000001036842942"}]});
+          noscript(style="color:#c00;font-size:16px;font-weight:bold;")
+            | Виджет карты использует JavaScript. Включите его в настройках вашего браузера.
+
+
 
 
 block additionScript

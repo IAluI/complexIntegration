@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 512 512"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.1 r15371"
+   width="100%"
+   height="100%"
+   sodipodi:docname="plug.svg">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview6"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.23046875"
+     inkscape:cx="-1473.0843"
+     inkscape:cy="367.71852"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <path
+     d="m 370.74745,0 45.25018,45.25317 -89.37636,89.37335 50.75121,50.75021 89.37535,-89.37536 45.25017,45.25018 -89.37535,89.37535 57.37523,57.37422 L 436.6857,331.3143 180.6837,75.3123 223.99588,32.00012 281.3721,89.37635 Z M 137.36953,374.62747 C 54.488213,291.74314 119.18846,182.02971 175.10169,114.98045 l 221.91286,221.91286 c -67.04826,55.91223 -176.76169,120.61447 -259.64502,37.73416 z m 22.6251,41.37515 L 95.996375,352.00537 0,448.00175 63.99725,512 Z"
+     id="path4"
+     inkscape:connector-curvature="0"
+     style="stroke-width:0.13636397" />
+</svg>

@@ -3,6 +3,8 @@
 */
 $enable-validation-icons: false;
 $enable-responsive-font-sizes: true;
+
+$primary: #c82228;
 /*
   Библиотеки
 */
@@ -51,7 +53,7 @@ $spritesheet-sprites: false;
 
 html {
   min-width: 320px;
-  @include responsive-font-size(14, 20, 320, 1200);
+  @include responsive-font-size(16, 20, 320, 1200);
 }
 
 a {
@@ -59,6 +61,13 @@ a {
   &:hover {
     color: inherit;
   }
+}
+
+h2 {
+  padding: {
+    bottom: 1.5rem;
+  };
+  margin: 0;
 }
 
 $headerColor: rgb(51, 48, 55);
@@ -94,4 +103,114 @@ $sectionColor: rgb(87, 89, 95);
 
 .Services {
   background-color: $sectionColor;
+}
+
+.Services-Items {
+
+}
+
+.Services-Item {
+  display: flex;
+  align-items: center;
+  //flex: 1 1 370px;
+  padding: {
+    bottom: 2rem;
+  };
+}
+
+.Services-ItemImg {
+  flex: 0 0 6rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: {
+    right: 1rem;
+  };
+}
+
+.Services-ItemText {
+  margin: {
+    bottom: 0;
+  };
+}
+
+.Advantages-Icon {
+  font-size: 3em;
+  margin-bottom: 1.5rem;
+}
+
+.Projects {
+  background-color: $sectionColor;
+}
+
+.Competence {
+
+}
+
+.Competence-Item {
+  position: relative;
+  flex: 1 1 5rem;
+  border: {
+    width: 2px;
+    color: $primary;
+    style: solid;
+    radius: 20px;
+  }
+  box-shadow: 6px 6px 8px rgba(0,0,0,0.5);
+  padding: 1.5rem 10px;
+  margin: {
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 2rem;
+    top: 1.5rem;
+  }
+  text-align: center;
+}
+
+.Competence-ItemImg {
+  position: absolute;
+  top: -1.5rem;
+  left: -1.5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  box-shadow: 6px 6px 8px rgba(0,0,0,0.3);
+  background-color: #fff;
+  > svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+  }
+}
+
+.Brands {
+  background-color: $sectionColor;
+}
+
+.Brands-Item {
+  display: block;
+  position: relative;
+  flex: 0 0 8rem;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background-color: #fff;
+  overflow: hidden;
+  margin: {
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 1.5rem;
+  }
+  img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.Contacts-Copyright {
+  font-size: 0.5rem;
 }
