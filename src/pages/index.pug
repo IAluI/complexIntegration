@@ -33,7 +33,7 @@ block content
       div.row
         div.col-12.order-1.col-md-5.order-md-0.py-4
           h2 Комплексный подход к любой задаче
-          a(href='https://2gis.ru/barnaul/firm/70000001036842942').d-flex.align-items-center.mb-3
+          a(target="_blank", href='https://2gis.ru/barnaul/firm/70000001036842942').d-flex.align-items-center.mb-3
             +icon('location', 'red').flex-shrink-0.mr-1
             span 656043, г. Барнаул,ул. Короленко 113, офис 8      
           a(href='tel:+73852570176').d-flex.align-items-center.mb-3
@@ -105,7 +105,25 @@ block content
   section.text-white.Projects
     div.container.py-4
       h2.text-center Реализованные проекты
-
+      div.row 
+        div.col-12.col-md-4.order-1.order-md-0.mb-3
+          div.swiper-container.Projects-SliderThumbs
+            div.swiper-wrapper
+              - var n = 1;
+              while n < 25
+                div.swiper-slide
+                  img(src='/img/project_' + n + '.jpg', alt='')
+                - n++;
+        div.col-12.col-md-8.order-0.order-md-1.mb-3
+          div.swiper-container.Projects-Slider
+            div.swiper-wrapper
+              - var n = 1;
+              while n < 25
+                div.swiper-slide
+                  img(src='/img/project_' + n + '.jpg', alt='')
+                - n++;  
+            div.swiper-button-next
+            div.swiper-button-prev          
   section
     div.container.py-4
       h2.text-center Наша компетенция
@@ -182,7 +200,7 @@ block content
     div.container
       div.row
         div.col-12.col-lg-5.py-4
-          a(href='https://2gis.ru/barnaul/firm/70000001036842942').d-flex.align-items-center.mb-3
+          a(target="_blank", href='https://2gis.ru/barnaul/firm/70000001036842942').d-flex.align-items-center.mb-3
             +icon('location', 'red').flex-shrink-0.mr-1
             span 656043, г. Барнаул,ул. Короленко 113, офис 8
           a(href='tel:+73852570176').d-flex.align-items-center.mb-3
