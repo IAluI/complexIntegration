@@ -70,6 +70,15 @@ h2 {
   margin: 0;
 }
 
+section {
+  position: relative;
+}
+
+#services, #contacts {
+  position: relative;
+  top: -4rem;
+}
+
 $headerColor: rgb(51, 48, 55);
 $sectionColor: rgb(87, 89, 95);
 
@@ -114,14 +123,9 @@ $sectionColor: rgb(87, 89, 95);
   background-color: $sectionColor;
 }
 
-.Services-Items {
-
-}
-
 .Services-Item {
   display: flex;
   align-items: center;
-  //flex: 1 1 370px;
   padding: {
     bottom: 2rem;
   };
@@ -164,7 +168,6 @@ $sectionColor: rgb(87, 89, 95);
 
 .Projects-SliderThumbs {
   .swiper-slide {
-    //opacity: 0.5;
     border-bottom: {
       width: 2px;
       color: transparent;
@@ -172,7 +175,6 @@ $sectionColor: rgb(87, 89, 95);
     };
     transition: .3s border-bottom-color;
     &.swiper-slide-thumb-active {
-      //opacity: 1;
       border-bottom: {
         color: $primary;
       };
@@ -197,19 +199,9 @@ $sectionColor: rgb(87, 89, 95);
   }
 }
 
-/* .Projects-SliderThumbs {
-  .swiper-wrapper {
-    flex-wrap: wrap;
-  }
-} */
-
-.Competence {
-
-}
-
 .Competence-Item {
   position: relative;
-  flex: 1 1 5rem;
+  flex: 1 1 8rem;
   border: {
     width: 2px;
     color: $primary;

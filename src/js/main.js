@@ -1,14 +1,27 @@
+'use strict';
+
 import Swiper from 'swiper';
 import 'bootstrap/js/dist/modal';
 import debounce from 'lodash/debounce';
+import svg4everybody from 'svg4everybody';
 
 $(document).ready(() => {
+  svg4everybody();
+
+  $('a[href^="#"]').click(function (e) {
+    e.preventDefault();
+    var id = $(this).attr('href');
+    var top = $(id).offset().top;
+    $('html, body').animate({
+      scrollTop: top
+    }, 350);
+  });
+
   let header = $('.Header');
   let jqWindow = $(window);
-	let	scrollPrev = 0;
+  let	scrollPrev = 0;
 
   jqWindow.scroll(debounce(function() {
-    console.log('ok')
     let scrolled = jqWindow.scrollTop();
   
     if ( scrolled > 100 && scrolled > scrollPrev ) {

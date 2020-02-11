@@ -236,10 +236,21 @@ gulp.task('webpack', function(callback) {
       rules: [
         {
           test: /\.js$/,
-          exclude: /node_modules/,
-          use: {
+          exclude: function(modulePath) {
+            let includeModules = [
+              'swiper',
+              'dom7'
+            ];
+            return /node_modules/.test(modulePath) &&
+              !includeModules.some((val) => {
+                return new RegExp('node_modules\\\\' + val).test(modulePath);
+              });
+          },
+          use: [/* {
+            loader: 'echo-loader'
+          },  */{
             loader: 'babel-loader'
-          }
+          }]
         }
       ]
     },

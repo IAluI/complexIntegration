@@ -27,6 +27,7 @@
     "babel-loader": "^8.0.6",
     "browser-sync": "^2.26.7",
     "del": "^5.0.0",
+    "echo-loader": "0.0.1",
     "exports-loader": "^0.7.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
@@ -57,6 +58,7 @@
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
     "popper.js": "^1.16.0",
+    "svg4everybody": "^2.1.9",
     "swiper": "^5.3.0"
   }
 }
