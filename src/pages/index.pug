@@ -43,7 +43,7 @@ block content
             +icon('mail', 'red').flex-shrink-0.mr-1
             span info@cisenergy.ru
         div.col-12.order-0.col-md-7.order-md-1.position-relative.overflow-hidden
-          img(src='/img/approach.jpg', alt='').Approach-Img
+          +img(src='/img/approach.jpg', alt='').Approach-Img
   section.text-white.Services
     a(id='services')
     div.container.py-4
@@ -51,32 +51,32 @@ block content
       div.row
         div.col-12.col-md-6.col-xl-4.Services-Item
           div.Services-ItemImg
-            img(src='/img/servives_design.jpg', alt='Проектирование').w-100
+            +img(src='/img/servives_design.jpg', alt='Проектирование').w-100
           p.Services-ItemText
             | Проектирование силовых щитов и щитов управления
         div.col-12.col-md-6.col-xl-4.Services-Item
           div.Services-ItemImg
-            img(src='/img/servives_production.jpg', alt='Производство').w-100
+            +img(src='/img/servives_production.jpg', alt='Производство').w-100
           p.Services-ItemText
             | Производство щитового оборудования
         div.col-12.col-md-6.col-xl-4.Services-Item
           div.Services-ItemImg
-            img(src='/img/servives_repair.jpg', alt='Диагностика').w-100
+            +img(src='/img/servives_repair.jpg', alt='Диагностика').w-100
           p.Services-ItemText
             | Диагностика и ремонт промышленной электроники
         div.col-12.col-md-6.col-xl-4.Services-Item
           div.Services-ItemImg
-            img(src='/img/servives_automation.jpg', alt='Автоматизация').w-100
+            +img(src='/img/servives_automation.jpg', alt='Автоматизация').w-100
           p.Services-ItemText
             | Автоматизация технологических процессов
         div.col-12.col-md-6.col-xl-4.Services-Item
           div.Services-ItemImg
-            img(src='/img/servives_installation.jpg', alt='Монтаж').w-100
+            +img(src='/img/servives_installation.jpg', alt='Монтаж').w-100
           p.Services-ItemText
             | Монтаж и шеф-монтаж
         div.col-12.col-md-6.col-xl-4.Services-Item
           div.Services-ItemImg
-            img(src='/img/servives_commissioning.jpg', alt='Пусконаладочные работы').w-100
+            +img(src='/img/servives_commissioning.jpg', alt='Пусконаладочные работы').w-100
           p.Services-ItemText
             | Пусконаладочные работы
       button(data-toggle='modal', data-target='#modalForm').btn.btn-primary.font-weight-bold.d-block.mx-auto
@@ -113,7 +113,7 @@ block content
               - var n = 1;
               while n < 25
                 div.swiper-slide
-                  img(src='/img/project_' + n + '.jpg', alt='')
+                  +img(src='/img/project_' + n + '.jpg', alt='').w-100
                 - n++;
         div.col-12.col-md-8.order-0.order-md-1.mb-3
           div.swiper-container.Projects-Slider
@@ -121,7 +121,7 @@ block content
               - var n = 1;
               while n < 25
                 div.swiper-slide
-                  img(src='/img/project_' + n + '.jpg', alt='')
+                  +img(src='/img/project_' + n + '.jpg', alt='').w-100
                 - n++;  
             div.swiper-button-next
             div.swiper-button-prev          
@@ -166,37 +166,37 @@ block content
       h2.text-center Мы поставляем КИПиА ведущих мировых брендов
       div.d-flex.flex-wrap.justify-content-around
         a(target="_blank", href='https://www.se.com/ru/ru/').Brands-Item
-          img(src='/img/brand_schneider.jpg', alt='Schneider Electric').w-100
+          +img(src='/img/brand_schneider.jpg', alt='Schneider Electric').w-100
         a(target="_blank", href='https://omron.ru/ru/home').Brands-Item
-          img(src='/img/brand_omron.jpg', alt='Omron').w-100
+          +img(src='/img/brand_omron.jpg', alt='Omron').w-100
         a(target="_blank", href='https://www.phoenixcontact.com/online/portal/ru').Brands-Item
-          img(src='/img/brand_phoenix.jpg', alt='Phoenix Contact').w-100
+          +img(src='/img/brand_phoenix.jpg', alt='Phoenix Contact').w-100
         a(target="_blank", href='https://www.idec.com/').Brands-Item
-          img(src='/img/brand_idec.jpg', alt='Idec').w-100
+          +img(src='/img/brand_idec.jpg', alt='Idec').w-100
         a(target="_blank", href='https://www.ifm.com/ru/ru').Brands-Item
-          img(src='/img/brand_ifm.jpg', alt='ifm').w-100
+          +img(src='/img/brand_ifm.jpg', alt='ifm').w-100
         a(target="_blank", href='https://www.lenze.com/en-us/').Brands-Item
-          img(src='/img/brand_lenze.jpg', alt='Lenze').w-100
+          +img(src='/img/brand_lenze.jpg', alt='Lenze').w-100
         a(target="_blank", href='https://leuze-electronicc.ru/').Brands-Item
-          img(src='/img/brand_leuze.jpg', alt='Leuze Electronic').w-100
+          +img(src='/img/brand_leuze.jpg', alt='Leuze Electronic').w-100
         a(target="_blank", href='https://www.lutze.com/').Brands-Item
-          img(src='/img/brand_lutze.jpg', alt='Lutze').w-100
+          +img(src='/img/brand_lutze.jpg', alt='Lutze').w-100
         a(target="_blank", href='https://www.murrelektronik.com/').Brands-Item
-          img(src='/img/brand_murr.jpg', alt='Murr Elektronik').w-100
+          +img(src='/img/brand_murr.jpg', alt='Murr Elektronik').w-100
         a(target="_blank", href='https://www.pepperl-fuchs.com/russia/ru/').Brands-Item
-          img(src='/img/brand_pepperl.jpg', alt='Pepperl Fuchs').w-100
+          +img(src='/img/brand_pepperl.jpg', alt='Pepperl Fuchs').w-100
         a(target="_blank", href='https://www.sew-eurodrive.ru/glavnaya.html').Brands-Item
-          img(src='/img/brand_sewEurodrive.jpg', alt='Sew Eurodrive').w-100
+          +img(src='/img/brand_sewEurodrive.jpg', alt='Sew Eurodrive').w-100
         a(target="_blank", href='https://www.sick.com/ru/ru').Brands-Item
-          img(src='/img/brand_sick.jpg', alt='Sick').w-100
+          +img(src='/img/brand_sick.jpg', alt='Sick').w-100
         a(target="_blank", href='https://new.siemens.com/ru/ru.html').Brands-Item
-          img(src='/img/brand_siemens.jpg', alt='Siemens').w-100
+          +img(src='/img/brand_siemens.jpg', alt='Siemens').w-100
         a(target="_blank", href='https://www.telcosensors.com/').Brands-Item
-          img(src='/img/brand_telco.jpg', alt='Telco Sensors').w-100
+          +img(src='/img/brand_telco.jpg', alt='Telco Sensors').w-100
         a(target="_blank", href='https://trelectronic.com/').Brands-Item
-          img(src='/img/brand_trElectronic.jpg', alt='TR Electronic').w-100
+          +img(src='/img/brand_trElectronic.jpg', alt='TR Electronic').w-100
         a(target="_blank", href='https://www.yaskawa.eu.com/ru/').Brands-Item
-          img(src='/img/brand_yaskawa.jpg', alt='Yaskawa').w-100
+          +img(src='/img/brand_yaskawa.jpg', alt='Yaskawa').w-100
   section
     a(id='contacts')
     div.container

@@ -37,12 +37,10 @@ const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 // модуль для минификации css
 const cssmin = require('gulp-minify-css');
-// плагин для сжатия PNG, JPEG, GIF и SVG изображений
+// модуль для сжатия PNG, JPEG, GIF и SVG изображений
 const imagemin = require('gulp-imagemin');
-// плагин для сжатия jpeg
-const jpegrecompress = require('imagemin-jpeg-recompress');
-// плагин для сжатия png
-const pngquant = require('imagemin-pngquant');
+// плагин для преобразования и изображений в webp
+const webp = require('imagemin-webp');
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
@@ -66,6 +64,11 @@ const paths = {
     src: "./src/img/*.{jpg,jpeg,png,gif,svg,ico}",
     dist: "./dist//img/",
     watch: "./src/img/*.{jpg,jpeg,png,gif,svg,ico}"
+  },
+  imagesWebp: {
+    src: "./src/img/*.{jpg,jpeg,png}",
+    dist: "./dist//img/",
+    watch: "./src/img/*.{jpg,jpeg,png}"
   },
   rastrSprite: {
     src: "./src/icons_r/*.{png,jpg,jpeg}",
@@ -127,13 +130,12 @@ gulp.task('fonts', () => {
 gulp.task('images', () => {
   return gulp.src(paths.images.src)
     .pipe(imagemin([
-      imagemin.gifsicle({interlaced: true}),
-      imagemin.jpegtran({progressive: true}),
-      jpegrecompress({
-        loops: 5,
-        min: 70,
-        max: 75,
-        quality: 'medium'
+      imagemin.gifsicle({
+        interlaced: true,
+        optimizationLevel: 3,
+      }),
+      imagemin.optipng({
+        optimizationLevel: 7
       }),
       imagemin.svgo({
         plugins: [
@@ -141,13 +143,27 @@ gulp.task('images', () => {
           {cleanupIDs: false}
         ]
       }),
-      imagemin.optipng({optimizationLevel: 3}),
-      pngquant({
-        quality: [0.7, 0.8],
-        speed: 5
-      })
+      imagemin.mozjpeg({
+        quality: 75,
+        progressive: true
+      }),
     ]))
     .pipe(gulp.dest(paths.images.dist))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('imagesWebp', () => {
+  return gulp.src(paths.imagesWebp.src)
+    .pipe(imagemin([
+      webp({
+        quality: 75,
+        method: 6
+      }),
+    ]))
+    .pipe(rename({
+      extname: '.webp'
+    }))
+    .pipe(gulp.dest(paths.imagesWebp.dist))
     .pipe(browserSync.stream());
 });
 
@@ -166,18 +182,23 @@ gulp.task('rastrSprite', () => {
   let imgStream = spriteData.img
     .pipe(buffer())
     .pipe(imagemin([
-      imagemin.jpegtran({progressive: true}),
-      jpegrecompress({
-        loops: 5,
-        min: 70,
-        max: 75,
-        quality: 'medium'
+      imagemin.gifsicle({
+        interlaced: true,
+        optimizationLevel: 3,
       }),
-      imagemin.optipng({optimizationLevel: 3}),
-      pngquant({
-        quality: [0.7, 0.8],
-        speed: 5
-      })
+      imagemin.optipng({
+        optimizationLevel: 7
+      }),
+      imagemin.svgo({
+        plugins: [
+          {removeViewBox: false},
+          {cleanupIDs: false}
+        ]
+      }),
+      imagemin.mozjpeg({
+        quality: 75,
+        progressive: true
+      }),
     ]))
     .pipe(gulp.dest(paths.rastrSprite.dist));
 
@@ -214,10 +235,11 @@ gulp.task('webpack', function(callback) {
   let options = {
     mode: isDevelopment ? 'development' : 'production',
     entry: {
-      main: path.resolve(__dirname, 'src/js/main.js')
+      main: path.resolve(__dirname, 'src/js/main.js'),
     },
     output: {
       path: path.resolve(__dirname, 'dist/js'),
+      publicPath: '/',
       /*library: 'ef',*/
     },
     watch: isDevelopment,
@@ -306,6 +328,7 @@ gulp.task('webserver', () => {
   gulp.watch(paths.pug.watch, gulp.series('pug'));
   gulp.watch(paths.styles.watch, gulp.series('styles'));
   gulp.watch(paths.images.watch, gulp.series('images'));
+  gulp.watch(paths.imagesWebp.watch, gulp.series('imagesWebp'));
   gulp.watch(paths.rastrSprite.watch, gulp.series('rastrSprite', 'styles'));
   gulp.watch(paths.svgSprite.watch, gulp.series('svgSprite', 'styles'));
   gulp.watch(paths.fonts.watch, gulp.series('fonts'));
@@ -320,6 +343,7 @@ gulp.task('build',
     gulp.parallel(
       'fonts',
       'images',
+      'imagesWebp',
       'styles',
       'webpack',
       'pug'

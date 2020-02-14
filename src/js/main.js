@@ -49,7 +49,7 @@ $(document).ready(() => {
         slidesPerView: 4,
         slidesPerColumn: 6,
         slidesPerColumnFill: 'row',
-        allowTouchMove: false,
+        followFinger: false,
         loop: false,
         spaceBetween: 10,    
         watchSlidesVisibility: true,
