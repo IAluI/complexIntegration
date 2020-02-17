@@ -9,6 +9,8 @@ const fs = require('fs');
 const buffer = require('vinyl-buffer');
 const merge = require('merge-stream');
 
+//
+const modernizr = require('modernizr');
 // модуль для создания растровых спрайтов
 const spritesmith = require('gulp.spritesmith');
 // модуль для форматирования
@@ -231,6 +233,27 @@ gulp.task('svgSprite', () => {
     .pipe(browserSync.stream());
 });
 
+gulp.task('modernizr', (cb) => {
+  modernizr.build({
+    "minify": true,
+    "options": [
+      "setClasses"
+    ],
+    "feature-detects": [
+      "test/img/webp"
+    ]
+  }, (code) => {
+    let folder = path.resolve(__dirname, 'dist/js');
+    if (!fs.existsSync(folder)) {
+      fs.mkdirSync(folder);
+    }
+    let file = fs.openSync(folder + '/modernizr.js', 'w');
+    fs.writeFileSync(file, code);
+    fs.closeSync(file);
+    cb();
+  });
+});
+
 gulp.task('webpack', function(callback) {
   let options = {
     mode: isDevelopment ? 'development' : 'production',
@@ -341,6 +364,7 @@ gulp.task('build',
       'rastrSprite',
     ),    
     gulp.parallel(
+      'modernizr',
       'fonts',
       'images',
       'imagesWebp',
